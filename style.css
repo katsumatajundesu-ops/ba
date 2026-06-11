@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   全体設計（ベース・余白・洗練されたモダンゴシック）
+   ========================================================================== */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa; /* 僅かに温かみのある白 */
+    color: #222222; /* 柔らかい墨色 */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.3;
+    letter-spacing: 0.12em; /* 全体の文字間を広く */
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #222222;
+    text-decoration: none;
+    transition: color 0.3s, border-color 0.3s;
+}
+a:hover {
+    color: #888888;
+}
+
+/* タイトなセンターコンテナ */
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 10rem 4rem; /* 上下に心地いい余白 */
+    position: relative;
+}
+
+/* ==========================================================================
+   ヘッダー ＆ ナビゲーション（ロゴとメニュー）
+   ========================================================================== */
+.site-header {
+    text-align: center;
+    margin-bottom: 2.5rem; /* ロゴからメニューまでの間隔 */
+}
+
+.site-logo img {
+    width: 100px; /* ロゴのサイズ */
+    height: auto;
+    display: inline-block;
+}
+
+/* ナビゲーション：ロゴのすぐ下にすっきりと横並び */
+.site-nav {
+    text-align: center;
+    margin-bottom: 4rem; /* メニューからコンテンツ（または写真）までの余白 */
+}
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 4rem; /* メニュー同士の間隔 */
+}
+.site-nav a {
+    font-size: 1.4rem;
+    font-weight: 500;   /* 少し太め（Medium） */
+    letter-spacing: 0.3em; /* 文字間を贅沢に広げて美しく */
+    color: #222222;    /* 最初から黒（墨色） */
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid transparent;
+    display: inline-block;
+}
+.site-nav a:hover {
+    color: #888888;
+    border-bottom: 1px solid #e5e5e5; /* ホバーした時に静かに薄い下線を出す */
+}
+/* 現在地の下線 */
+.site-nav a.current {
+    color: #222222;
+    border-bottom: 1px solid #222222; /* 現在いるページにはしっかり下線を引く */
+}
+
+/* ==========================================================================
+   トップページ専用スタイル（ロゴ → メニュー → 写真）
+   ========================================================================== */
+.top-main .main-image {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.top-main .main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   下層コンテンツ：ABOUT
+   ========================================================================== */
+.about-section .statement {
+    margin-bottom: 4rem;
+}
+
+.about-image {
+    width: 100%;
+    margin-bottom: 5rem;
+    overflow: hidden;
+}
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.about-block {
+    margin-top: 5rem;
+}
+.about-block h3 {
+    font-size: 1.4rem; /* 本文と同じサイズに設定 */
+    font-weight: 700;   /* 太さだけで見出しであることを認識させる */
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.15em;
+    color: #111111;
+}
+
+.ba-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ba-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333333;
+}
+.ba-list li::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+}
+
+/* CEOブロック（勝股さんのお写真サイズを制御） */
+.ceo-block .ceo-name {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.ceo-image {
+    max-width: 280px; /* 大きくなりすぎないようにサイズを制限 */
+    aspect-ratio: 3 / 2; /* 3:2の比率で綺麗にトリミング */
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.ceo-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.ceo-block .ceo-profile {
+    color: #333333;
+    margin: 0;
+}
+
+/* ==========================================================================
+   下層コンテンツ：WORK
+   ========================================================================== */
+.work-item {
+    margin-bottom: 7rem;
+}
+.work-item:last-child {
+    margin-bottom: 0;
+}
+.work-item h3 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #111111;
+}
+.work-item p {
+    color: #333333;
+}
+
+.workshop-lead {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #555555;
+}
+
+.workshop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.3rem;
+    color: #555555;
+}
+.workshop-list li {
+    margin-bottom: 1rem;
+}
+.workshop-list li span {
+    display: inline-block;
+    width: 6.5rem;
+    color: #999999;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   下層コンテンツ：TEAM（2列のミニマルグリッド）
+   ========================================================================== */
+.team-section {
+    margin-top: 4rem;
+}
+
+.team-statement {
+    margin-bottom: 5rem;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6rem 4rem; /* 縦の間隔 6rem / 横の間隔 4rem */
+}
+
+.member-card {
+    width: calc(50% - 2rem); 
+    text-align: left;
+}
+
+.member-image {
+    width: 100%;
+    aspect-ratio: 3 / 2; /* 縦横比を常に 3:2（横長）に固定 */
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    background-color: #eaeaea;
+}
+.member-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dummy-photo {
+    aspect-ratio: 3 / 2;
+    background-color: #eaeaea; 
+}
+
+.member-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 0.6rem 0;
+    letter-spacing: 0.12em;
+}
+
+.member-role {
+    font-size: 1.2rem;
+    color: #555555;
+    margin: 0 0 0.8rem 0;
+    letter-spacing: 0.08em;
+}
+
+.member-sns {
+    margin: 0;
+}
+.member-sns a {
+    font-size: 1.15rem;
+    color: #888888;
+    border-bottom: 1px solid #e5e5e5;
+    display: inline-block;
+    letter-spacing: 0.05em;
+}
+.member-sns a:hover {
+    color: #222222;
+    border-bottom-color: #222222;
+}
+
+/* ==========================================================================
+   CONTACT ＆ FOOTER
+   ========================================================================== */
+.contact-section {
+    text-align: center;
+    padding: 4rem 0;
+}
+.contact-section p {
+    color: #444444;
+}
+.contact-section .email {
+    font-size: 1.6rem;
+    margin-top: 4rem;
+}
+.contact-section .email a {
+    font-weight: 500;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 0.3rem;
+}
+.contact-section .email a:hover {
+    border-bottom-color: #222222;
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 12rem;
+    font-size: 1.0rem;
+    color: #bbbbbb;
+    letter-spacing: 0.08em;
+}
+
+/* ==========================================================================
+   モバイル対応
+   ========================================================================== */
+@media (max-width: 600px) {
+    .container {
+        padding: 6rem 2.5rem;
+    }
+    .site-header {
+        margin-bottom: 2.0rem;
+    }
+    .site-nav {
+        margin-bottom: 4rem;
+    }
+    .site-nav ul {
+        gap: 3rem;
+    }
+    
+    .team-grid {
+        gap: 5rem 0;
+    }
+    .member-card {
+        width: 100%;
+    }
+    
+    body {
+        font-size: 1.35rem;
+        line-height: 2.1;
+    }
+}
