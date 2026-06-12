@@ -104,6 +104,7 @@ a:hover {
     margin-bottom: 4rem;
 }
 
+/* ABOUTページ内のアトリエ写真の設定 */
 .about-image {
     width: 100%;
     margin-bottom: 5rem;
@@ -116,6 +117,7 @@ a:hover {
     object-fit: cover;
 }
 
+/* 「事業内容」「CEO」の見出し調整（大きすぎず、静かに佇むサイズ） */
 .about-block {
     margin-top: 5rem;
 }
@@ -186,6 +188,37 @@ a:hover {
     color: #333333;
 }
 
+/* 実績リンクの装飾設定（新設） */
+.work-links {
+    margin-top: 3.5rem;
+    font-size: 1.3rem;
+    color: #555555;
+}
+.links-lead {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #555555;
+}
+.work-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.work-links li {
+    margin-bottom: 1.2rem;
+}
+.work-links a {
+    color: #666666;
+    border-bottom: 1px solid #e5e5e5;
+    display: inline-block;
+    padding-bottom: 0.1rem;
+}
+.work-links a:hover {
+    color: #222222;
+    border-bottom-color: #222222;
+}
+
+/* ワークショップ一覧の装飾設定 */
 .workshop-lead {
     margin-top: 4rem;
     margin-bottom: 1.5rem;
@@ -193,7 +226,6 @@ a:hover {
     font-weight: 700;
     color: #555555;
 }
-
 .workshop-list {
     list-style: none;
     padding: 0;
@@ -212,7 +244,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   下層コンテンツ：TEAM（2列のミニマルグリッド）
+   下層コンテンツ：TEAM（2列のミニマルグリッド・所属新設版）
    ========================================================================== */
 .team-section {
     margin-top: 4rem;
@@ -225,7 +257,7 @@ a:hover {
 .team-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 6rem 4rem; /* 縦の間隔 6rem / 横の間隔 4rem */
+    gap: 6rem 4rem;
 }
 
 .member-card {
@@ -254,13 +286,31 @@ a:hover {
     background-color: #eaeaea; 
 }
 
+/* 名前の右脇に「所属」を回り込ませる設定 */
+.member-title-wrap {
+    display: flex;
+    align-items: baseline; /* 文字の下端を揃える */
+    flex-wrap: wrap;       /* 画面幅が狭い時は自然に折り返す */
+    gap: 1.2rem;           /* 名前と所属の間の心地いい余白 */
+    margin-bottom: 0.4rem;
+}
+
 .member-name {
     font-size: 1.35rem;
     font-weight: 700;
-    margin: 0 0 0.6rem 0;
     letter-spacing: 0.12em;
+    display: inline-block;
 }
 
+/* 右脇の所属：お名前より少し小ぶりで、静かな薄い墨色 */
+.member-affiliation {
+    font-size: 1.15rem;
+    color: #888888;
+    letter-spacing: 0.08em;
+    display: inline-block;
+}
+
+/* その下の役割：日常の体温が伝わる標準的な墨色 */
 .member-role {
     font-size: 1.2rem;
     color: #555555;
