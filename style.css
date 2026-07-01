@@ -365,7 +365,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   モバイル対応
+   モバイル対応（iPhone 12 miniなどのコンパクトなスマホにも完全対応）
    ========================================================================== */
 @media (max-width: 600px) {
     .container {
@@ -376,9 +376,17 @@ a:hover {
     }
     .site-nav {
         margin-bottom: 4rem;
+        width: 100%;
     }
     .site-nav ul {
-        gap: 3rem;
+        display: flex;
+        justify-content: space-between; /* 画面幅に合わせて均等に配置 */
+        gap: 0; /* gapによる固定値の押し出しを防ぐ */
+        padding: 0 0.5rem; /* 両端に気持ちだけ余白を確保 */
+    }
+    .site-nav a {
+        font-size: 1.25rem; /* 1.4remから少しだけコンパクトに調整 */
+        letter-spacing: 0.15em; /* 字間を贅沢に広げつつ、スマホでもはみ出さないバランスに */
     }
     
     .team-grid {
